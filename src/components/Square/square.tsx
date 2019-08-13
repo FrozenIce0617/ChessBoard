@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 
+import './styles.scss';
+
 interface IProps {
   isBlack: boolean;
   isOverlay: boolean;
@@ -14,13 +16,11 @@ class Square extends React.Component<IProps> {
 
     return (
       <div
+        className="square"
         style={{
           backgroundColor: isOverlay ? 'red' : fill,
           opacity: isOverlay ? 0.5 : 1,
           color: stroke,
-          width: '100%',
-          height: '100%',
-          userSelect: 'none',
         }}
       >
         {children}

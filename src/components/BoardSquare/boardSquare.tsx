@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import Square from '../Square';
+import './styles.scss';
 
 interface IProps {
   posX: number;
@@ -15,13 +16,7 @@ class BoardSquare extends React.Component<IProps> {
     const isBlack = (posX + posY) % 2 === 1;
 
     return (
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: '100%',
-        }}
-      >
+      <div className="squareContainer">
         <Square isBlack={isBlack} isOverlay={isOverlay}>
           {children}
         </Square>

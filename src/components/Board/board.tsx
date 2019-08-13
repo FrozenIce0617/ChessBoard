@@ -5,6 +5,7 @@ import { positionToString } from '../../helpers/positionHelper';
 import BoardSquare from '../BoardSquare';
 import Knight from '../Knight';
 import { getPositionRequest } from '../../redux/api/actions';
+import './styles.scss';
 
 interface IProps {
   availablePosition: string[];
@@ -66,7 +67,7 @@ class Board extends React.Component<IProps, IState> {
     return (
       <div
         key={index}
-        style={{ width: '10vw', height: '10vw' }}
+        className="square"
         onClick={() => this.onHandleClick(x, y)}
       >
         <BoardSquare posX={x} posY={y} isOverlay={this.isOverlay(x, y)}>
@@ -81,25 +82,8 @@ class Board extends React.Component<IProps, IState> {
     for (let i = 0; i < 64; i += 1) squares.push(this.renderSquare(i));
 
     return (
-      <div
-        style={{
-          width: '80vw',
-          height: '80vw',
-          paddingLeft: '10vw',
-          paddingRight: '10vw',
-        }}
-      >
-        <div
-          style={{
-            border: '1px solid gray',
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexWrap: 'wrap',
-          }}
-        >
-          {squares}
-        </div>
+      <div className="container">
+        <div className="boardSquare">{squares}</div>
       </div>
     );
   }
