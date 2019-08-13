@@ -1,23 +1,26 @@
-import React, { ReactChildren } from 'react';
+import React, { ReactNode } from 'react';
 
-type Props = {
+interface IProps {
   isBlack: boolean;
-  children: ReactChildren;
-};
+  isOverlay: boolean;
+  children?: ReactNode;
+}
 
-class Square extends React.Component<Props> {
+class Square extends React.Component<IProps> {
   render() {
-    const { isBlack, children } = this.props;
+    const { isBlack, isOverlay, children } = this.props;
     const fill = isBlack ? 'black' : 'white';
     const stroke = isBlack ? 'white' : 'black';
 
     return (
       <div
         style={{
-          backgroundColor: fill,
+          backgroundColor: isOverlay ? 'red' : fill,
+          opacity: isOverlay ? 0.5 : 1,
           color: stroke,
           width: '100%',
           height: '100%',
+          userSelect: 'none',
         }}
       >
         {children}
