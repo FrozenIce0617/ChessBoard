@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Square Component render component 1`] = `
+<div
+  className="square"
+  style={
+    Object {
+      "backgroundColor": "black",
+      "color": "white",
+      "opacity": 1,
+    }
+  }
+/>
+`;

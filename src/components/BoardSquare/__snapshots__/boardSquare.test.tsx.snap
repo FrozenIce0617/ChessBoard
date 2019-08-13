@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Square Component render component 1`] = `
+<div
+  className="squareContainer"
+>
+  <Square
+    isBlack={false}
+    isOverlay={true}
+  />
+</div>
+`;
